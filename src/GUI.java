@@ -144,7 +144,7 @@ public class GUI implements ActionListener{
 			TranslateWord trans=new TranslateWord(sent, Language.GERMAN);
 			String myTrans=trans.getTrans();
 			dispMessage+="Google Translate Says: "+myTrans+"\n";
-			String mT2="";
+			/*String mT2="";
 		
 			try{
 				mT2 = trans.getBingTrans();
@@ -152,17 +152,17 @@ public class GUI implements ActionListener{
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			} */
 			
 			Parser pars=new Parser(myTrans, "ger");
 			String myParsed=pars.parse();
 			
 			Search_Receive search=new Search_Receive("\""+myParsed+"\"");
 			dispMessage+="Google parsed ("+myParsed+") returned "+search.getNumber()+" results\n";
-			Parser pars2=new Parser(mT2, "ger");
+			/*Parser pars2=new Parser(mT2, "ger");
 			String myParsed2=pars2.parse();
 			Search_Receive search2=new Search_Receive("\""+myParsed2+"\"");
-			dispMessage+="Bing parsed ("+myParsed2+") returned "+search2.getNumber()+" results\n";
+			dispMessage+="Bing parsed ("+myParsed2+") returned "+search2.getNumber()+" results\n"; */
 			output.setText(dispMessage);
 			
 			
@@ -173,7 +173,7 @@ public class GUI implements ActionListener{
 			TranslateWord trans=new TranslateWord(sent, Language.FRENCH);
 			String myTrans=trans.getTrans();
 			dispMessage+="Google Translate says: "+myTrans+"\n";
-			String mT2="";
+			/*String mT2="";
 		
 			try{
 				mT2 = trans.getBingTrans();
@@ -181,15 +181,15 @@ public class GUI implements ActionListener{
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 			Parser pars=new Parser(myTrans, "fr");
 			String myParsed=pars.parse();
 			Search_Receive search=new Search_Receive("\""+myParsed+"\"");
 			dispMessage+="Google parsed ("+myParsed+") returned "+search.getNumber()+" results \n";
-			Parser pars2=new Parser(mT2, "ger");
+			/*Parser pars2=new Parser(mT2, "ger");
 			String myParsed2=pars2.parse();
 			Search_Receive search2=new Search_Receive("\""+myParsed2+"\"");
-			dispMessage+="Bing parsed("+myParsed2+") returned "+search2.getNumber()+" results\n";
+			dispMessage+="Bing parsed("+myParsed2+") returned "+search2.getNumber()+" results\n";*/
 			output.setText(dispMessage);
 			
 		}

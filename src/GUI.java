@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-/**
+/** 
  * simple GUI for the translation process
  * @author katie wolf (main contributor)
  * @author gracie gilbert (action listeners only)
@@ -139,41 +139,43 @@ public class GUI implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource().equals(transbutt)){
+			
 			String dispMessage="";
 			String sent=translate.getText();
 			TranslateWord trans=new TranslateWord(sent, Language.GERMAN);
 			String myTrans=trans.getTrans();
 			dispMessage+="Google Translate Says: "+myTrans+"\n";
-			String mT2="";
+			//String mT2="";
 		
-			try{
+		/*	try{
 				mT2 = trans.getBingTrans();
 				dispMessage+="Bing Translate Says: "+mT2+"\n";
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+			*/
 			Parser pars=new Parser(myTrans, "ger");
 			String myParsed=pars.parse();
 			
 			Search_Receive search=new Search_Receive("\""+myParsed+"\"");
 			dispMessage+="Google parsed ("+myParsed+") returned "+search.getNumber()+" results\n";
-			Parser pars2=new Parser(mT2, "ger");
+			/*Parser pars2=new Parser(mT2, "ger");
 			String myParsed2=pars2.parse();
 			Search_Receive search2=new Search_Receive("\""+myParsed2+"\"");
-			dispMessage+="Bing parsed ("+myParsed2+") returned "+search2.getNumber()+" results\n";
+			dispMessage+="Bing parsed ("+myParsed2+") returned "+search2.getNumber()+" results\n"; */
 			output.setText(dispMessage);
 			
 			
 		}
 		else if(arg0.getSource().equals(transbutt2)){
+			output.setText("Please wait while translating...");
 			String sent=translate.getText();
 			String dispMessage="";
 			TranslateWord trans=new TranslateWord(sent, Language.FRENCH);
 			String myTrans=trans.getTrans();
 			dispMessage+="Google Translate says: "+myTrans+"\n";
-			String mT2="";
+			/*String mT2="";
 		
 			try{
 				mT2 = trans.getBingTrans();
@@ -181,15 +183,17 @@ public class GUI implements ActionListener{
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 			Parser pars=new Parser(myTrans, "fr");
 			String myParsed=pars.parse();
 			Search_Receive search=new Search_Receive("\""+myParsed+"\"");
 			dispMessage+="Google parsed ("+myParsed+") returned "+search.getNumber()+" results \n";
+			
+	/*
 			Parser pars2=new Parser(mT2, "ger");
 			String myParsed2=pars2.parse();
 			Search_Receive search2=new Search_Receive("\""+myParsed2+"\"");
-			dispMessage+="Bing parsed("+myParsed2+") returned "+search2.getNumber()+" results\n";
+			dispMessage+="Bing parsed("+myParsed2+") returned "+search2.getNumber()+" results\n"; */
 			output.setText(dispMessage);
 			
 		}

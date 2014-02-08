@@ -11,7 +11,7 @@ To use this project, the following JAR files are necessary: gtranslateapi-1.0.ja
 
 Also note that the tagger file is filled with french and german taggers that are given from the Stanford postagger API.
 
-Running the program launches a GUI, in which you enter the sentence on the left side, and click the button that corresponds to the language you want the sentence translated into. WE DID NOT DO BASICALLY ANY ERROR CHECKING. IT IS REALLY LATE/EARLY.
+Running the program launches a GUI, in which you enter the sentence on the left side, and click the button that corresponds to the language you want the sentence translated into. ***PLEASE NOTE THAT IT TAKES LIKE 10 SECONDS TO PROCESS USUALLY. ALSO WE DID NOT DO BASICALLY ANY ERROR CHECKING. IT IS REALLY LATE/EARLY. 
 
 
 

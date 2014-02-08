@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
  * simple GUI for the translation process
  * @author katie wolf (main contributor)
  * @author gracie gilbert (action listeners only)
- *
+ *  
  */
 public class GUI implements ActionListener{
 	
@@ -41,7 +41,11 @@ public class GUI implements ActionListener{
 		side2.setMinimumSize(new Dimension(500, 700));
 		side2.setPreferredSize(new Dimension(700, 1200));
 		totalGUI.add(side2);
-		
+		try { 
+		    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+		    e.printStackTrace();
+		}
 		
 		//label pan
 		buttpan = new JPanel();
@@ -158,7 +162,7 @@ public class GUI implements ActionListener{
 			Parser pars=new Parser(myTrans, "ger");
 			String myParsed=pars.parse();
 			
-			Search_Receive search=new Search_Receive("\""+myParsed+"\"");
+			Search_Receive search=new Search_Receive("\""+myParsed+"\"", "German");
 			dispMessage+="Google parsed ("+myParsed+") returned "+search.getNumber()+" results\n";
 			/*Parser pars2=new Parser(mT2, "ger");
 			String myParsed2=pars2.parse();
@@ -186,7 +190,7 @@ public class GUI implements ActionListener{
 			}*/
 			Parser pars=new Parser(myTrans, "fr");
 			String myParsed=pars.parse();
-			Search_Receive search=new Search_Receive("\""+myParsed+"\"");
+			Search_Receive search=new Search_Receive("\""+myParsed+"\"", "French");
 			dispMessage+="Google parsed ("+myParsed+") returned "+search.getNumber()+" results \n";
 			
 	/*
